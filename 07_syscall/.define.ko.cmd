@@ -1,0 +1,1 @@
+cmd_/home/developer/myproject/Driver_Study/04_define/define.ko := ld -r -m elf_x86_64  -z max-page-size=0x200000 -z noexecstack   --build-id  -T ./scripts/module-common.lds -o /home/developer/myproject/Driver_Study/04_define/define.ko /home/developer/myproject/Driver_Study/04_define/define.o /home/developer/myproject/Driver_Study/04_define/define.mod.o;  true

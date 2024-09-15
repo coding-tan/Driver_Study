@@ -1,0 +1,1 @@
+cmd_/home/developer/myproject/Driver_Study/05_module/helloworld.ko := arm-linux-gnueabihf-ld -r  -EL -T ./scripts/module-common.lds -T ./arch/arm/kernel/module.lds  --build-id  -o /home/developer/myproject/Driver_Study/05_module/helloworld.ko /home/developer/myproject/Driver_Study/05_module/helloworld.o /home/developer/myproject/Driver_Study/05_module/helloworld.mod.o ;  true

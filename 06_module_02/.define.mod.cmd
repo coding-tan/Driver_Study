@@ -1,0 +1,1 @@
+cmd_/home/developer/myproject/Driver_Study/04_define/define.mod := { echo  /home/developer/myproject/Driver_Study/04_define/define.o;  echo; } > /home/developer/myproject/Driver_Study/04_define/define.mod
