@@ -6,6 +6,7 @@
 #include <linux/kdev_t.h>
 #include <linux/cdev.h>
 #include <linux/device.h>
+#include <linux/uaccess.h>
 
 static int major = 0;
 static int minor = 0;
@@ -21,11 +22,23 @@ static int cdev_test_open(struct inode *inode, struct file *file){
 }
 
 static ssize_t cdev_test_read(struct file *file, char __user *buf, size_t size, loff_t *off){
+    char kbuf[32] = "This is cdev_test_read!";
+    if(copy_to_user(buf, kbuf, strlen(kbuf)) != 0){
+        printk("copy_to_user is error\n");
+        return -1;
+    }
     printk("This is cdev_test_read\n");
     return 0;
 }
 
 static ssize_t cdev_test_write(struct file *file, const char __user *buf, size_t size, loff_t *off){
+    char kbuf[32] = "This is cdev_test_read!";
+    if(copy_from_user(kbuf, buf, size) != 0){
+        printk("copy_from_user is error\n");
+        return -1;
+    }
+    printk("kbuf is %s\n", kbuf);
+
     printk("This is cdev_test_write\n");
     return 0;
 }
